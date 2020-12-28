@@ -5,7 +5,8 @@
 
 import Operation from "../Operation.mjs";
 import Utils from "../Utils.mjs";
-import { bitOp, xor, BITWISE_OP_DELIMS } from "../lib/BitwiseOp.mjs";
+import { BITWISE_OP_DELIMS } from "../lib/BitwiseOp.mjs";
+import XOR from "./XOR.mjs"
 
 /**
  * XOR operation
@@ -50,15 +51,12 @@ class XORplain extends Operation {
      * @returns {byteArray}
      */
     run(input, args) {
-        input = new Uint8Array(input);
         const crib = Utils.convertToByteArray(args[0].string || "", args[0].option),
             [, scheme, nullPreserving] = args;
-        const keylength = crib.length;
-        const key = bitOp(input.slice(0, keylength), crib, xor, nullPreserving, scheme);
-        return bitOp(input, key, xor, nullPreserving, scheme);
+        const key = XOR.call(input.slice(0,crib.length), args)
+        return XOR.call(input, [{option:"skip", string:key}, args[1], args[2]])
     }
-
-    /**
+/**
      * Highlight XOR
      *
      * @param {Object[]} pos
