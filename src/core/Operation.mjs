@@ -45,6 +45,9 @@ class Operation {
         return input;
     }
 
+    static call(input, args) {
+        return this.prototype.run(input,args)
+    }
 
     /**
      * Interface for forward highlighter
