@@ -333,7 +333,7 @@ class Utils {
                 return Utils.strToUtf8ByteArray(str);
             case "skip":
                 return str;
-                case "latin1":
+            case "latin1":
             default:
                 return Utils.strToByteArray(str);
         }
