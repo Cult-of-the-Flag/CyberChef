@@ -49,12 +49,11 @@ class ROT13 extends Operation {
      * @returns {byteArray}
      */
     run(input, args) {
-        const output = [...input],
+        const output = input,
             rot13Lowercase = args[0],
             rot13Upperacse = args[1];
         let amount = args[2],
             chr;
-
         if (amount) {
             if (amount < 0) {
                 amount = 26 - (Math.abs(amount) % 26);
