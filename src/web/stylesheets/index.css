@@ -7,6 +7,8 @@
  */
 
 /* Themes */
+@import "./themes/_cult.css";
+@import "./themes/_cult-min.css";
 @import "./themes/_classic.css";
 @import "./themes/_dark.css";
 @import "./themes/_geocities.css";
