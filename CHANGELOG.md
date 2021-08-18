@@ -1,6 +1,47 @@
 # Changelog
+
+## Versioning
+
+CyberChef uses the [semver](https://semver.org/) system to manage versioning: `<MAJOR>.<MINOR>.<PATCH>`.
+
+- MAJOR version changes represent a significant change to the fundamental architecture of CyberChef and may (but don't always) make breaking changes that are not backwards compatible.
+- MINOR version changes usually mean the addition of new operations or reasonably significant new features.
+- PATCH versions are used for bug fixes and any other small tweaks that modify or improve existing capabilities.
+
 All major and minor version changes will be documented in this file. Details of patch-level version changes can be found in [commit messages](https://github.com/gchq/CyberChef/commits/master).
 
+
+## Details
+
+### [9.31.0] - 2021-08-10
+- 'HASSH Client Fingerprint' and 'HASSH Server Fingerprint' operations added [@n1474335] | [e9ca4dc]
+
+### [9.30.0] - 2021-08-10
+- 'JA3S Fingerprint' operation added [@n1474335] | [289a417]
+
+### [9.29.0] - 2021-07-28
+- 'JA3 Fingerprint' operation added [@n1474335] | [9a33498]
+
+### [9.28.0] - 2021-03-26
+- 'CBOR Encode' and 'CBOR Decode' operations added [@Danh4] | [#999]
+
+### [9.27.0] - 2021-02-12
+- 'Fuzzy Match' operation added [@n1474335] | [8ad18b]
+
+### [9.26.0] - 2021-02-11
+- 'Get Time' operation added [@n1073645] [@n1474335] | [#1045]
+
+### [9.25.0] - 2021-02-11
+- 'Extract ID3' operation added [@n1073645] [@n1474335] | [#1006]
+
+### [9.24.0] - 2021-02-02
+- 'SM3' hashing function added along with more configuration options for other hashing operations [@n1073645] [@n1474335] | [#1022]
+
+### [9.23.0] - 2021-02-01
+- Various RSA operations added to encrypt, decrypt, sign, verify and generate keys [@mattnotmitt] [@GCHQ77703] | [#652]
+
+### [9.22.0] - 2021-02-01
+- 'Unicode Text Format' operation added [@mattnotmitt] | [#1083]
 
 ### [9.21.0] - 2020-06-12
 - Node API now exports `magic` operation [@d98762625] | [#1049]
@@ -227,6 +268,17 @@ All major and minor version changes will be documented in this file. Details of 
 
 
 
+[9.31.0]: https://github.com/gchq/CyberChef/releases/tag/v9.31.0
+[9.30.0]: https://github.com/gchq/CyberChef/releases/tag/v9.30.0
+[9.29.0]: https://github.com/gchq/CyberChef/releases/tag/v9.29.0
+[9.28.0]: https://github.com/gchq/CyberChef/releases/tag/v9.28.0
+[9.27.0]: https://github.com/gchq/CyberChef/releases/tag/v9.27.0
+[9.26.0]: https://github.com/gchq/CyberChef/releases/tag/v9.26.0
+[9.25.0]: https://github.com/gchq/CyberChef/releases/tag/v9.25.0
+[9.24.0]: https://github.com/gchq/CyberChef/releases/tag/v9.24.0
+[9.23.0]: https://github.com/gchq/CyberChef/releases/tag/v9.23.0
+[9.22.0]: https://github.com/gchq/CyberChef/releases/tag/v9.22.0
+[9.21.0]: https://github.com/gchq/CyberChef/releases/tag/v9.21.0
 [9.20.0]: https://github.com/gchq/CyberChef/releases/tag/v9.20.0
 [9.19.0]: https://github.com/gchq/CyberChef/releases/tag/v9.19.0
 [9.18.0]: https://github.com/gchq/CyberChef/releases/tag/v9.18.0
@@ -326,6 +378,13 @@ All major and minor version changes will be documented in this file. Details of 
 [@pointhi]: https://github.com/pointhi
 [@MarvinJWendt]: https://github.com/MarvinJWendt
 [@dmfj]: https://github.com/dmfj
+[@mattnotmitt]: https://github.com/mattnotmitt
+[@Danh4]: https://github.com/Danh4
+
+[8ad18b]: https://github.com/gchq/CyberChef/commit/8ad18bc7db6d9ff184ba3518686293a7685bf7b7
+[9a33498]: https://github.com/gchq/CyberChef/commit/9a33498fed26a8df9c9f35f39a78a174bf50a513
+[289a417]: https://github.com/gchq/CyberChef/commit/289a417dfb5923de5e1694354ec42a08d9395bfe
+[e9ca4dc]: https://github.com/gchq/CyberChef/commit/e9ca4dc9caf98f33fd986431cd400c88082a42b8
 
 [#95]: https://github.com/gchq/CyberChef/pull/299
 [#173]: https://github.com/gchq/CyberChef/pull/173
@@ -387,6 +446,7 @@ All major and minor version changes will be documented in this file. Details of 
 [#625]: https://github.com/gchq/CyberChef/pull/625
 [#627]: https://github.com/gchq/CyberChef/pull/627
 [#632]: https://github.com/gchq/CyberChef/pull/632
+[#652]: https://github.com/gchq/CyberChef/pull/652
 [#653]: https://github.com/gchq/CyberChef/pull/653
 [#674]: https://github.com/gchq/CyberChef/pull/674
 [#683]: https://github.com/gchq/CyberChef/pull/683
@@ -398,3 +458,9 @@ All major and minor version changes will be documented in this file. Details of 
 [#965]: https://github.com/gchq/CyberChef/pull/965
 [#966]: https://github.com/gchq/CyberChef/pull/966
 [#987]: https://github.com/gchq/CyberChef/pull/987
+[#999]: https://github.com/gchq/CyberChef/pull/999
+[#1006]: https://github.com/gchq/CyberChef/pull/1006
+[#1022]: https://github.com/gchq/CyberChef/pull/1022
+[#1045]: https://github.com/gchq/CyberChef/pull/1045
+[#1049]: https://github.com/gchq/CyberChef/pull/1049
+[#1083]: https://github.com/gchq/CyberChef/pull/1083
