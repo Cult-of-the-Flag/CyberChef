@@ -47,7 +47,7 @@ function main() {
         showErrors:          true,
         errorTimeout:        4000,
         attemptHighlight:    true,
-        theme:               "cult-min",
+        theme:               "cult",
         useMetaKey:          false,
         ioDisplayThreshold:  2048,
         logLevel:            "info",
