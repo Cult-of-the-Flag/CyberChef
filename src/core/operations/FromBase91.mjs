@@ -5,10 +5,14 @@
 import Operation from "../Operation.mjs";
 import {fromBase91} from "../lib/Base91.mjs";
 
-
+/**
+ * From91
+ */
 class FromBase91 extends Operation {
- 
 
+    /**
+     * From91
+     */
     constructor() {
         super();
 
@@ -34,11 +38,11 @@ class FromBase91 extends Operation {
      */
     run(input, args) {
         const [alphabet, removeNonAlphChars] = args;
-        var x = fromBase91(input, alphabet, removeNonAlphChars);
+        const x = fromBase91([...input], alphabet, removeNonAlphChars);
         return x;
     }
 
-    /** 
+    /**
      * Highlight to Base91
      *
      * @param {Object[]} pos

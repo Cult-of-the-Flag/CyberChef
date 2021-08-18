@@ -45,8 +45,15 @@ class Operation {
         return input;
     }
 
+    /**
+     * Interface for operation runner for other operations
+     *
+     * @param {*} input
+     * @param {Object[]} args
+     * @returns {*}
+     */
     static call(input, args) {
-        return this.prototype.run(input,args)
+        return this.prototype.run(input, args);
     }
 
     /**

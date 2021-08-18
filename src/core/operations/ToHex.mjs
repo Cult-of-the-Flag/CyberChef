@@ -35,6 +35,11 @@ class ToHex extends Operation {
                 name: "Bytes per line",
                 type: "number",
                 value: 0
+            },
+            {
+                name: "Type",
+                "type": "option",
+                "value": ["de ad be ef", "deadbeef", "0xde 0xad 0xbe 0xef", "\\xde\\xad\\xbe\\xef", "C array", "Python array"]
             }
         ];
     }
@@ -54,7 +59,44 @@ class ToHex extends Operation {
         }
         const lineSize = args[1];
 
-        return toHex(new Uint8Array(input), delim, 2, comma, lineSize);
+        let ret = "";
+        let stage = toHex(new Uint8Array(input), delim, 2, comma, lineSize);
+        const code = stage.split(" ");
+        switch (args[2]) {
+            case "de ad be ef":
+                return stage;
+            case "deadbeef":
+                stage = stage.replace(/ /g, "");
+                return stage;
+            case "0xde 0xad 0xbe 0xef":
+                stage = "0x" + stage.replace(/ /g, " 0x");
+                return stage;
+            case "\\xde\\xad\\xbe\\xef":
+                stage = "\\x" + stage.replace(/ /g, "\\x");
+                return stage;
+            case "C array":
+                ret = "unsigned char code[] = {";
+                for (let i=0;i<code.length;i++) {
+                    if (!(i%10)) {
+                        ret += "\n    ";
+                    }
+                    ret += "0x" + code[i] + ", ";
+                }
+                ret = ret.substring(0, ret.length - 2) + "\n};";
+                return ret;
+            case "Python array":
+                ret = "code = [";
+                for (let i=0;i<code.length;i++) {
+                    if (!(i%10)) {
+                        ret += "\n    ";
+                    }
+                    ret += "0x" + code[i] + ", ";
+                }
+                ret = ret.substring(0, ret.length - 2) + "\n]";
+                return ret;
+            default:
+                return stage;
+        }
     }
 
     /**

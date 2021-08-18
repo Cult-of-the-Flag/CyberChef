@@ -5,8 +5,10 @@
  */
 
 import Operation from "../Operation.mjs";
+import Utils from "../Utils.mjs";
 import {DELIM_OPTIONS} from "../lib/Delim.mjs";
 import {fromDecimal} from "../lib/Decimal.mjs";
+import SwapEndianness from "./SwapEndianness.mjs";
 
 /**
  * From Decimal operation
@@ -29,6 +31,16 @@ class FromDecimal extends Operation {
                 "name": "Delimiter",
                 "type": "option",
                 "value": DELIM_OPTIONS
+            },
+            {
+                "name": "Byte length",
+                "type": "option",
+                "value": ["1", "2", "4", "8"]
+            },
+            {
+                "name": "endianness",
+                "type": "option",
+                "value": ["Little Endian", "Big Endian"]
             },
             {
                 "name": "Support signed values",
@@ -76,11 +88,25 @@ class FromDecimal extends Operation {
      * @returns {byteArray}
      */
     run(input, args) {
-        let data = fromDecimal(input, args[0]);
-        if (args[1]) { // Convert negatives
+        let data = fromDecimal(input, args[0], args[1]);
+        if (args[3]) { // Convert negatives
             data = data.map(v => v < 0 ? 0xFF + v + 1 : v);
         }
-        return data;
+        let output = [];
+
+        for (let i=0;i<data.length;i++) {
+            for (let j=0;j<args[1];j++) {
+                output.push(data[i]%256);
+                data[i] = data[i]>>8;
+            }
+        }
+
+        if (args[2]==="Big Endian") {
+            output = SwapEndianness.call((Utils.byteArrayToChars(output)), ["Raw", Number(args[1])]);
+            output = Utils.strToByteArray(output);
+        }
+
+        return output;
     }
 
 }

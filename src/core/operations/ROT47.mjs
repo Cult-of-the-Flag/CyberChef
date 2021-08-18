@@ -39,7 +39,7 @@ class ROT47 extends Operation {
      * @returns {byteArray}
      */
     run(input, args) {
-        const output = input;
+        const output = [...input];
         let amount = args[0],
             chr;
 
