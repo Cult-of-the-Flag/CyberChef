@@ -26,6 +26,7 @@
         "no-useless-call": "error",
         "no-useless-return": "error",
         "radix": "warn",
+        "no-undef":"warn",
 
         // modify rules from base configurations
         "no-unused-vars": ["error", {
