@@ -153,7 +153,7 @@
                         <script type="text/javascript">
                             // Must be text/javascript rather than application/javascript otherwise IE won't recognise it...
                             if (navigator.userAgent && navigator.userAgent.match(/Trident/)) {
-                                document.write("Internet Explorer is not supported, please use Firefox or Chrome instead");
+                                document.getElementById("notice").innerHTML += "Internet Explorer is not supported, please use Firefox or Chrome instead";
                                 alert("Internet Explorer is not supported, please use Firefox or Chrome instead");
                             }
                         </script>
@@ -673,6 +673,26 @@
                                         <li><a href="#recipe=To_Hex('Space',0,'%5C%5Cxde%5C%5Cxad%5C%5Cxbe%5C%5Cxef')&input=Q3VsdCBvZiB0aGUgZmxhZw">Better ToHex</a></li>
                                         <li><a href="#recipe=From_Hex('Auto')To_Decimal('Space','4','Little%20Endian',false)&input=ZGVhZGJlZWY">U32</a></li>
                                     </ul>
+                                </div>
+                                <br>
+
+                                <a class="btn btn-primary" data-toggle="collapse" data-target="#faq-load-files">
+                                    Can I load input directly from files?
+                                </a>
+                                <div class="collapse" id="faq-load-files">
+                                    <p>Yes! Just drag your file over the input box and drop it.</p>
+                                    <p>CyberChef can handle files up to around 2GB (depending on your browser), however some of the operations may take a very long time to run over this much data.</p>
+                                    <p>If the output is larger than a certain threshold (default <a href="#recipe=Multiply('Line%20feed')Convert_data_units('Bytes%20(B)','Mebibytes%20(MiB)')&input=MTAyNAoxMDI0">1MiB</a>), it will be presented to you as a file available for download. Slices of the file can be viewed in the output if you need to inspect them.</p>
+                                </div>
+                                <br>
+
+                                <a class="btn btn-primary" data-toggle="collapse" data-target="#faq-fork">
+                                    How do I run operation X over multiple inputs at once?
+                                </a>
+                                <div class="collapse" id="faq-fork">
+                                    <p>Maybe you have 10 timestamps that you want to parse or 16 encoded strings that all have the same key.</p>
+                                    <p>The 'Fork' operation (found in the 'Flow control' category) splits up the input line by line and runs all subsequent operations on each line separately. Each output is then displayed on a separate line. These delimiters can be changed, so if your inputs are separated by commas, you can change the split delimiter to a comma instead.</p>
+                                    <p><a href="#recipe=Fork('%5C%5Cn','%5C%5Cn',false)From_UNIX_Timestamp('Seconds%20(s)')&input=OTc4MzQ2ODAwCjEwMTI2NTEyMDAKMTA0NjY5NjQwMAoxMDgxMDg3MjAwCjExMTUzMDUyMDAKMTE0OTYwOTYwMA">Click here</a> for an example.</p>
                                 </div>
                                 <br>
 

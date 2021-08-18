@@ -18,15 +18,15 @@
             "From Binary",
             "To Octal",
             "From Octal",
-            "To Base64",
-            "From Base64",
-            "Show Base64 offsets",
             "To Base32",
             "From Base32",
             "To Base58",
             "From Base58",
             "To Base62",
             "From Base62",
+            "To Base64",
+            "From Base64",
+            "Show Base64 offsets",
             "To Base85",
             "From Base85",
             "To Base",
@@ -61,7 +61,9 @@
             "Parse TLV",
             "CSV to JSON",
             "JSON to CSV",
-            "Avro to JSON"
+            "Avro to JSON",
+            "CBOR Encode",
+            "CBOR Decode"
         ]
     },
     {
@@ -134,6 +136,11 @@
             "PGP Verify",
             "PGP Encrypt and Sign",
             "PGP Decrypt and Verify",
+            "Generate RSA Key Pair",
+            "RSA Sign",
+            "RSA Verify",
+            "RSA Encrypt",
+            "RSA Decrypt",
             "Parse SSH Host Key"
         ]
     },
@@ -186,6 +193,10 @@
             "Protobuf Decode",
             "VarInt Encode",
             "VarInt Decode",
+            "JA3 Fingerprint",
+            "JA3S Fingerprint",
+            "HASSH Client Fingerprint",
+            "HASSH Server Fingerprint",
             "Format MAC addresses",
             "Change IP format",
             "Group IP addresses",
@@ -200,6 +211,7 @@
         "ops": [
             "Encode text",
             "Decode text",
+            "Unicode Text Format",
             "Remove Diacritics",
             "Unescape Unicode Characters",
             "Convert to NATO alphabet"
@@ -232,6 +244,7 @@
             "Pad lines",
             "Find / Replace",
             "Regular expression",
+            "Fuzzy Match",
             "Offset checker",
             "Hamming Distance",
             "Convert distance",
@@ -261,6 +274,7 @@
             "Windows Filetime to UNIX Timestamp",
             "UNIX Timestamp to Windows Filetime",
             "Extract dates",
+            "Get Time",
             "Sleep"
         ]
     },
@@ -280,6 +294,7 @@
             "JPath expression",
             "CSS selector",
             "Extract EXIF",
+            "Extract ID3",
             "Extract Files"
         ]
     },
@@ -313,6 +328,7 @@
             "SHA1",
             "SHA2",
             "SHA3",
+            "SM3",
             "Keccak",
             "Shake",
             "RIPEMD",
