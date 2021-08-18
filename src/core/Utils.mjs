@@ -331,7 +331,9 @@ class Utils {
                 return fromBase64(str, null, "byteArray");
             case "utf8":
                 return Utils.strToUtf8ByteArray(str);
-            case "latin1":
+            case "skip":
+                return str;
+                case "latin1":
             default:
                 return Utils.strToByteArray(str);
         }
