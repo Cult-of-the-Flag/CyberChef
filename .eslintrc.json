@@ -26,6 +26,7 @@
         "no-useless-call": "error",
         "no-useless-return": "error",
         "radix": "warn",
+        "no-undef":"warn",
 
         // modify rules from base configurations
         "no-unused-vars": ["error", {
@@ -63,7 +64,8 @@
         }],
         "linebreak-style": ["error", "unix"],
         "quotes": ["error", "double", {
-            "avoidEscape": true
+            "avoidEscape": true,
+            "allowTemplateLiterals": true
         }],
         "camelcase": ["error", {
             "properties": "always"
